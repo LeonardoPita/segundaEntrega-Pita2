@@ -5,7 +5,7 @@ import { products } from "./src/stock.js";
 - GUARDAR LOS ITEMS DEL CARRITO EN EL LOCALSTORAGE PARA QUE LOS REGRESE AL RECARGAR LA PAGINA
 - USAR OPERADORES AVANZADOS (&&, ||, MAS COND ? OPCION1 : OPCION 2 ), MAS DESESTRUCTURACION EN PARAMETROS
     Y ARRAYS Y OBJETOS CUANDO SEA POSIBLE
-- INCORPORAR UNA LIBRERIA, EN ESTE CASO USARÉ SWEETALERTS     */
+- INCORPORAR UNA LIBRERIA, EN ESTE CASO USARÉ SWEET ALERTS     */
 
 /* ------------------------------VARIABLES---------------------------------- */
 
@@ -28,21 +28,21 @@ products.forEach((product) => {
     let productContent = document.createElement("article");
     productContent.classList.add("product");
     productContent.innerHTML = `<div class="img-container">
-    <img src="${product.img}"
-        alt="product car decal" class="product-img">
-    <button class="bag-btn" id="${product.id}">
-        <i class="fas fa-shopping-cart"></i>
-        click the image to add to the basket
-    </button>
-</div>
-<h3>${product.title}</h3>
-<h4>$${product.price}</h4>`
+                                <img src="${product.img}"
+                                    alt="product car decal" class="product-img">
+                                <button class="bag-btn" id="${product.id}">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    click the image to add to the basket
+                                </button>
+                                </div>
+                                <h3>${product.title}</h3>
+                                <h4>$${product.price}</h4>`
     productsDOM.append(productContent);
-/* ------------------------------CLICK PRODUCT TO ADD TO THE BASKET---------------------------- */
-//TO DO --- Evitar que se agregue un producto dos veces, en su lugar agregar +1 a la cantidad.
-    
-        productContent.addEventListener("click", () => {
-        myCart.push(products[product.id -1]);
+    /* ------------------------------CLICK PRODUCT TO ADD TO THE BASKET---------------------------- */
+    //TO DO --- Evitar que se agregue un producto dos veces, en su lugar agregar +1 a la cantidad.
+
+    productContent.addEventListener("click", () => {
+        myCart.push(products[product.id - 1]);
         console.log(myCart);
         let cartItems = document.createElement("div");
         cartItems.classList.add("cart-item");
@@ -57,7 +57,8 @@ products.forEach((product) => {
                                     <p class="item-amount">${product.quantity}</p>
                                     <i class="fas fa-chevron-down"></i>
                                 </div>`
-        cartContent.append(cartItems);})  ////////////////////Only way i can add the event
+        cartContent.append(cartItems);
+    })  ////////////////////Only way i can add the event
 
 });
 
@@ -74,9 +75,7 @@ const toggleCartOpenClose = () => {
 toggleCartOpenClose();
 
 /* --------------------------------ADD TO TOTAL---------------------------- */
-const addToTotal = () => {
-    total = quantity * price;
-}
+
 
 
 
