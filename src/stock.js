@@ -1,6 +1,6 @@
 /* ------------------------------PRODUCTS---------------------------------- */
 const products = [
-    {id: 1, title: "Mid Ford Ranger Decal",price: 20, img: `assets/img1.jpg`, quantity: 10},
+    {id: 1, title: "Mid Ford Ranger Decal",price: 20, img: `assets/img1.jpg`, quantity: 1},
     {id: 2, title: "Mid Ford Ranger Decal",price: 30, img: `assets/img1.jpg`, quantity: 1},
     {id: 3, title: "Mid Ford Ranger Decal",price: 40, img: `assets/img1.jpg`, quantity: 1},
     {id: 4, title: "Mid Ford Ranger Decal",price: 50, img: `assets/img1.jpg`, quantity: 1},

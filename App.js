@@ -1,4 +1,12 @@
 import { products } from "./src/stock.js";
+
+/* POR HACER
+- AGREGAR TODA LA LOGICA
+- GUARDAR LOS ITEMS DEL CARRITO EN EL LOCALSTORAGE PARA QUE LOS REGRESE AL RECARGAR LA PAGINA
+- USAR OPERADORES AVANZADOS (&&, ||, MAS COND ? OPCION1 : OPCION 2 ), MAS DESESTRUCTURACION EN PARAMETROS
+    Y ARRAYS Y OBJETOS CUANDO SEA POSIBLE
+- INCORPORAR UNA LIBRERIA, EN ESTE CASO USARÉ SWEETALERTS     */
+
 /* ------------------------------VARIABLES---------------------------------- */
 
 const cartBtn = document.querySelector(".cart-btn");
