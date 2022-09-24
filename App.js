@@ -1,8 +1,6 @@
 import { products } from "./src/stock.js";
 /* ------------------------------VARIABLES---------------------------------- */
 
-const bannerBtn = document.querySelector(".banner-btn");
-
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -14,6 +12,7 @@ const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 const bagBtn = document.querySelector(".bag-btn");
 const myCart = [];
+let total = 0;
 
 /* ------------------------------PRODUCTS DISPLAY FROM STOCK---------------------------------- */
 
@@ -33,7 +32,8 @@ products.forEach((product) => {
     productsDOM.append(productContent);
 /* ------------------------------CLICK PRODUCT TO ADD TO THE BASKET---------------------------- */
 //TO DO --- Evitar que se agregue un producto dos veces, en su lugar agregar +1 a la cantidad.
-    productContent.addEventListener("click", () => {
+    
+        productContent.addEventListener("click", () => {
         myCart.push(products[product.id -1]);
         console.log(myCart);
         let cartItems = document.createElement("div");
@@ -64,6 +64,11 @@ const toggleCartOpenClose = () => {
     closeCartBtn.addEventListener("click", changeCartStyles);
 }
 toggleCartOpenClose();
+
+/* --------------------------------ADD TO TOTAL---------------------------- */
+const addToTotal = () => {
+    total = quantity * price;
+}
 
 
 
