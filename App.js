@@ -17,7 +17,6 @@ const myCart = [];
 
 /* ------------------------------PRODUCTS DISPLAY FROM STOCK---------------------------------- */
 
-
 products.forEach((product) => {
     let productContent = document.createElement("article");
     productContent.classList.add("product");
@@ -26,13 +25,32 @@ products.forEach((product) => {
         alt="product car decal" class="product-img">
     <button class="bag-btn" id="${product.id}">
         <i class="fas fa-shopping-cart"></i>
-        add to basket
+        click the image to add to the basket
     </button>
 </div>
 <h3>${product.title}</h3>
 <h4>$${product.price}</h4>`
     productsDOM.append(productContent);
-    productContent.addEventListener("click", () => {console.log("hola");})  ////////////////////Only way i can add the event
+/* ------------------------------CLICK PRODUCT TO ADD TO THE BASKET---------------------------- */
+//TO DO --- Evitar que se agregue un producto dos veces, en su lugar agregar +1 a la cantidad.
+    productContent.addEventListener("click", () => {
+        myCart.push(products[product.id -1]);
+        console.log(myCart);
+        let cartItems = document.createElement("div");
+        cartItems.classList.add("cart-item");
+        cartItems.innerHTML = `<img src="${product.img}" alt="product car decal">
+                                <div>
+                                    <h4>${product.title}</h4>
+                                    <h5>${product.price}</h5>
+                                    <span class="remove-item">Delete</span>
+                                </div>
+                                <div>
+                                    <i class="fas fa-chevron-up"></i>
+                                    <p class="item-amount">${product.quantity}</p>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>`
+        cartContent.append(cartItems);})  ////////////////////Only way i can add the event
+
 });
 
 /* --------------------------------FUNCTIONS FOR OPEN AND CLOSE THE CART----------------------- */
@@ -47,7 +65,6 @@ const toggleCartOpenClose = () => {
 }
 toggleCartOpenClose();
 
-/* ------------------------------ADD PRODUCTS AND DISPLAY IN CART---------------------------- */
 
 
 

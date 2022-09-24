@@ -140,16 +140,13 @@ body {
     background: var(--primaryColor);
     border: none;
     text-transform: uppercase;
-    padding: 1rem 2rem;
+    padding: 1.1rem 1rem;
     letter-spacing: var(--mainSpacing);
     font-weight: bold;
     transition: var(--mainTransition);
     transform: translateX(101%);
     cursor: pointer;
-}
-
-.bag-btn:hover {
-    color: var(--mainWhite);
+    font-size: 0.7rem;
 }
 
 .fa-shopping-cart {
